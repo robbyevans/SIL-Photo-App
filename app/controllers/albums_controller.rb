@@ -8,7 +8,7 @@ end
 
 def show
   album=Album.find_by!(id:params[:id])
-  render json: album, serializer:AlbumPhotoSerializer , status: :ok
+  render json: album, serializer:AlbumPhotoSerializer, status: :ok
 end
 
 private

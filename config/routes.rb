@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :photos
-  resources :albums
-  resources :users
+  resources :users,only: [:index,:show]
+  resources :albums,only: [:index,:show]
+  resources :photos,only: [:index,:show]
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
