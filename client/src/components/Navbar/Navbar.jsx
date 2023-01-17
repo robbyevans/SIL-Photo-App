@@ -6,7 +6,7 @@ import "./Navbar.css"
 function Navbar() {
   return (
     <div className='navbar'>
-      <h1 className='nav-title'>moveIT</h1>
+      <h1 className='nav-title'>viewIT</h1>
       <nav className='nav-wrap'>
         <NavLink className="navlink" to="/">Home</NavLink>
         <NavLink className="navlink" to="/Login">Login</NavLink>

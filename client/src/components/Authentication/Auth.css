@@ -1,6 +1,29 @@
-.login{
-  height: 1000px;
+.auth-page{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.signup{
-  height: 1080px;
+
+
+.form-control{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width:350px;
+}
+.form-control input{
+  padding: 10px;
+  margin:7px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  width:300px;
+}
+.form-control button{
+  width: 100px;
 }
