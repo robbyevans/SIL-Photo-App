@@ -11,7 +11,7 @@ puts "seeding...🌱"
   User.create(
     name:Faker::Name.name,
     username:Faker::Name.first_name,
-    email:Faker::Name.first_name
+    password_digest:12345
   )
 end
 puts"users complete!✅"
