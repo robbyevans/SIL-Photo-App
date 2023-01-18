@@ -9,7 +9,7 @@ import Signup from './components/Authentication/Signup';
 
 
 function App() {
-  const [user,setUser] = useState(null);
+  const [user,setUser] = useState([]);
 
   useEffect(()=>{
     fetch ("/me").then((r)=>{

@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./Auth.css"
 
 function Signup(setUser) {
+  const [name, setName] = useState("")
   const [username, setUsername] = useState("");
   const [email ,setEmail]= useState("");
   const [password,setPassword]=useState("");
@@ -17,13 +18,15 @@ function Signup(setUser) {
 
       },
       body:JSON.stringify({
-        username,
-        password,
-        password_confirmation: passwordConfirmation
+        name:name,
+        username:username,
+        email:email,
+        password:password,
+        password_confirmation:passwordConfirmation,
       }),
     }).then((r)=>{
       if (r.ok){
-        r.json().then((user)=>console.log(user));
+        r.json().then((user)=>setUser(user));
         
       }else
       setMsg("*Password should be identical and username unique")
@@ -38,22 +41,39 @@ function Signup(setUser) {
       <div className="signup">
         <form className='form-control' onSubmit={handleSubmit}>
         <input
+          type="text"
+          placeholder='Full Name'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          />
+        <input
         type="text"
         id="username"
         autoComplete="off"
+        placeholder='Username'
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         />
-          <input
+
+         <input
+          type="email"
+          placeholder='Email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          />
+
+        <input
           type="password"
           placeholder='password'
           value={password}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           >
           </input>
+
           <input
           type="password"
           id="password_confirmation"
+          placeholder='Confirm Password'
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           // autoComplete="current-password"

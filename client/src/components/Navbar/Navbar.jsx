@@ -5,7 +5,7 @@ import "./Navbar.css"
 
 function Navbar({user, setUser}) {
   function handleLogoutClick(){
-    fetch("/Logout",{method: "DELETE"}).then((r)=>{
+    fetch("/logout",{method: "DELETE"}).then((r)=>{
       if(r.ok){
         setUser(null);
       }

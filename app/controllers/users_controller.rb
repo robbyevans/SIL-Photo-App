@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
       user = User.find_by(id: session[:user_id])
-      render json: user
+      render json: user, status: :ok
   end
 
   private
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-      params.permit(:username, :password, :password_confirmation)
+      params.permit(:name, :username, :email, :password, :password_confirmation)
   end
 
       
