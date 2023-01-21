@@ -1,12 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import "./Home.css"
 
-function Album({albumParams}) {
+function Album({key,title}) {
 
-  const[id,album_id,user_id,album_title]=albumParams
+  console.log(title)
+
   const[showPicture, setShowPicture]=useState(null)
   
-  console.log(user_id)
+
+
   function handleClick(){
     setShowPicture(!showPicture)
 
@@ -18,7 +20,7 @@ function Album({albumParams}) {
    
        <div onClick={handleClick} className="album">
        <image className='album-cover-img' url="pickup02.jpg" alt=""></image>
-       <p className='title'></p>
+       <p className='title'>{title}</p>
      </div>
      {showPicture?(<div className="picture-wrap">
        <div className='picture-courasel'>
