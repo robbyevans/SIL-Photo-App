@@ -10,31 +10,103 @@
   justify-content: center; */
   /* flex-wrap: wrap; */
 }
-.banner-title{
-  width: 50%;
-  height: 500px;
-  border: 1px solid blue;
-  background-color:#ff3c00;
-  text-align: center;
+
+.home{
+
+  margin-left: 20px;
+}
+.welcome{
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.user-container{
+  border: 1px solid grey;
+  height: 7%;
+  margin: 10px;
+  padding: 5px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: transform .2s;
+  background-color: #f1f3f4;
 
 }
-.banner-image{
-  width: 50%;
-  height:500px ;
-  border: 1px solid green;
+.user-container:hover .user-img{
+    transform: scale(1.15);
+  
 }
-.banner-image img{
+.user-container:hover .user-name{
+  transform: translateX(15px);
+
+}
+.user-container:hover .user-album{
+  transform: translateX(15px);
+
+}
+.user-img{
+  border: 1px solid #00e660;
+  border-radius: 300px;
+  height: 70px;
+  width: 70px;
+  margin-left: 20px;
+}
+
+.user-name{
+  margin-left: 10px;
+}
+.user-album{
+  padding: 2px;
+  margin-left: 10px;
+  border-radius: 100px;
+  background-color: red; 
+}
+.album-wrap{
+  border: 1px solid grey;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: -11px;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  
+}
+.album{
+  height: 150px;
+  width: 150px;
+  border: 2px solid blue;
+  margin: 20px;
+}
+.picture-courasel{
+  position: fixed;
+  max-width: 600px;
+  top: 40%;
+  left: 50%;
+  display: flex;
+  transform: translate(-50%,-50%);
+  width: 50%;
+  height: 50%;
+  border: 1px solid red;
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+.closePicture{
+  position: fixed;
+  top: 8px;
+  right: 8px;
+}
+
+.picture-wrap{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
   height: 100%;
   width: 100%;
-}
-.main-title{
-  padding: 20px;
-  margin-top: 50px;
-  color: #fff;
-  border: 1px solid black;
-  font-size:30px;
-  text-align: left;
-
+  background-color: rgba(0, 0, 0, 0.2);
 }

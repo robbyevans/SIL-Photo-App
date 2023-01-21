@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router';
 import "./Auth.css"
 
 function Login ({setUser}){
   const[username,setUsername] =useState("")
   const [password, setPassword] =useState("")
   const [msg,setMsg]= useState(null);
+  const navigate =useNavigate()
 
   function handleSubmit(e){
     e.preventDefault();
@@ -16,7 +18,8 @@ function Login ({setUser}){
       body: JSON.stringify({username, password}),
     }).then((r)=>{
       if(r.ok){
-        r.json().then((user)=>setUser(user));
+        r.json().then((user)=>setUser(user))
+        navigate('/');
       }
       else
       setMsg("Invalid Username or Password")
