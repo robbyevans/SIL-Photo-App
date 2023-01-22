@@ -3,6 +3,8 @@ import "./Home.css"
 import UserWrap from './UserWrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import ImageSlider from './ImageSlider'
+import ResponsiveGallery from '../ResponsiveGallery'
 
 function Home() {
 
@@ -18,7 +20,7 @@ function Home() {
   return (
     <div className='home'>
       
-      <div className='welcome'>HI USER</div>
+      <ResponsiveGallery/>
 
       {users.map((user)=>(
         

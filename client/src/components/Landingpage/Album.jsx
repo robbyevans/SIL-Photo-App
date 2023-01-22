@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import "./Home.css"
+import PictureWrap from './PictureWrap'
 
 function Album({key,title}) {
 
@@ -22,11 +23,7 @@ function Album({key,title}) {
        <image className='album-cover-img' url="pickup02.jpg" alt=""></image>
        <p className='title'>{title}</p>
      </div>
-     {showPicture?(<div className="picture-wrap">
-       <div className='picture-courasel'>
-        <button className='closePicture' onClick={handleClick}>X</button>
-       </div>
-     </div>):(null)}
+     {showPicture?(<PictureWrap handleClick={handleClick}/>):(null)}
   
    
     </>
