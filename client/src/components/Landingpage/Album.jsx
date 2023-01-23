@@ -20,7 +20,7 @@ function Album({key,title}) {
     <>
    
        <div onClick={handleClick} className="album">
-       <image className='album-cover-img' url="pickup02.jpg" alt=""></image>
+       <img src='galleryicon.png' alt='' className='album-cover-img'/>
        <p className='title'>{title}</p>
      </div>
      {showPicture?(<PictureWrap handleClick={handleClick}/>):(null)}

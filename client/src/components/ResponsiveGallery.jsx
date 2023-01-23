@@ -1,6 +1,6 @@
 import { Action } from '@remix-run/router'
 import React,{useState,useEffect} from 'react'
-import Masonry from "react-responsive-masonry"
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import ImageSlider from './Landingpage/ImageSlider'
 
 const images = [
@@ -14,25 +14,37 @@ const images = [
 
 function ResponsiveGallery() {
 
-  const[data, setData]=useState({img: '',i:0})
+  const [view,setView]=useState("false")
+  const[data, setData]=useState(null)
 
-  const viewImage=(img,i)=>{
-    setData(img,i)
+
+  function viewImage(image){
+    setView(!view)
+    setData(image)
   }
 
-  const imgAction =(action) =>{
-    let i = data.i;
-    if (action==="next-img"){
-      setData({img: images[i+1],i: i+1});
-    }
 
-  }
+  // const viewImage=(img,i)=>{
+  //   setData(img,i)
+  // }
+
+  // const imgAction =(action) =>{
+  //   let i = data.i;
+  //   if (action==="next-img"){
+  //     setData({img: images[i+1],i: i+1});
+  //   }
+  //   if(action ==="previous-img"){
+  //     setData({img: images[i- 1],i:i-1})
+  //   }
+  //   if(!action){
+  //     setData({img: '',i:0});
+  //   }
+  // }
   return (
     <>
-    {
-      data.img &&
-      <div style={{
-        width:"100",
+   
+      {/* <div style={{
+        width:"100vw",
         height:"100vh",
         background:"black",
         position:"fixed",
@@ -41,29 +53,38 @@ function ResponsiveGallery() {
         alignItems:"center",
         overflow:"hidden",
       }}>
-        <button style={{position:"absolute",top:"10px",right:"10px"}}>X</button>
-        <button>Previous</button>
-        <img src={data.img} style={{
+        <button onClick={viewImage(view.image)} style={{position:"absolute",top:"20px",right:"40px"}}>X</button>
+        
+        <img src={data} style={{
           width:"auto",
-          maxWidth:"90%",
-          maxHeight:"90%",
+          maxWidth:"80%",
+          maxHeight:"80%",
         }}/>
-        <button onClick={()=>imgAction("next-img")}>Next</button>
-      </div>
-    }
-    <div style={{padding:"10px"}}>
+       
+      </div> */}
+
+
+      <div style={{padding:"10px"}}>
+    <ResponsiveMasonry
+                columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
+            >
       <Masonry columnsCount={3} gutter="10px">
-                {images.map((image, i) => (
+                {images.map((image) => (
                     <img
-                        key={i}
+                        // key={i}
                         src={image}
                         style={{width: "100%", display: "block", cursor:'pointer'}}
                         alt=""
-                        onClick={()=>viewImage(image,i)}
+                        onClick={()=>viewImage(image)}
                     />
                 ))}
             </Masonry>
+            </ResponsiveMasonry>
     </div>
+  
+      
+    
+    
     </>
   )
 }

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { MdCameraEnhance } from 'react-icons/md';
+
 
 const slideStyles = {
   width: "100%",
@@ -69,17 +71,26 @@ const ImageSlider = ({ slides }) => {
   return (
     <div className="slider mobile-v" style={sliderStyles}>
       <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
+        {/* <div  onClick={goToPrevious} style={leftArrowStyles}>
           ❰
-        </div>
-        <div onClick={goToNext} style={rightArrowStyles}>
+        </div> */}
+        {/* <div onClick={goToNext} style={rightArrowStyles}>
           ❱
+        </div> */}
+      </div>
+      <div style={slideStylesWidthBackground}>
+        <div className="title-wrap">
+          <div className="header-title">
+            <p>All your pictures in one place</p>
+            <h1>TURN YOUR PHOTOS<br/> INTO ART</h1>
+          <button className="header-btn"> Add Album  <MdCameraEnhance className="MdCameraEnhance"/></button>
+          </div>
         </div>
       </div>
-      <div style={slideStylesWidthBackground}></div>
       <div style={dotsContainerStyles}>
         {slides.map((slide, slideIndex) => (
           <div
+            className="dot"
             style={dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}

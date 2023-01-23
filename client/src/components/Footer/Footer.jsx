@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
 
-    <div class="footer-wrap">
+    {/* <div class="footer-wrap">
       <div className='footer-container'>
         <h3>Social Media</h3>
         <ul>
@@ -36,7 +36,7 @@ const Footer = () => {
           <li>careers</li>
         </ul>
       </div>
-    </div>
+    </div> */}
     <div className='legal'>
       <p>moveIT © 2022 All Rights Reserved.</p>
         </div>
