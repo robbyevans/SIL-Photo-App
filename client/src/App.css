@@ -7,44 +7,13 @@
   .navbar{
     font-size:small;
   }
-  /* .banner-title h1{
-    font-size: 40px;
-  }
-  .banner-p{
-    font-size: medium;
-    font-weight:300;
-    margin-top: 1px;
-    text-align: left;
-    padding:0 10px 10px 10px;
-  }
-  .banner-p br{
-    display: none;
-  }
-  .btn-wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-right: 30px;
-    padding: 20px;
-  }
-  .btn-wrap button:hover{
-    background-color: #fff;
-    color: #ff5800;
-
-  }
-  .mid-section{
-    font-size: small;
-  }
-  .mid-img{
-    display: none;
-  }
-  .mid-text{
-    margin-bottom: 20px;
-  }
-  .mid-text br{
-    display: none;
-  } */
-
+ 
   
 }
+
+/* .landingpage{
+  height: 90vh;
+  background-image: url("./new-images/pexels-visually-us-1643392.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */

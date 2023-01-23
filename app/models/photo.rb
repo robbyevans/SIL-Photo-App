@@ -1,6 +1,5 @@
-class Photo < ApplicationRecord
+ class Photo < ApplicationRecord
 
-  belongs_to :user
-  belongs_to :album
-  
-end
+      belongs_to :album
+      
+    end

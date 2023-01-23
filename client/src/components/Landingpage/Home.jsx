@@ -1,13 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import "./Home.css"
 import UserWrap from './UserWrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import ImageSlider from './ImageSlider'
 
 
 
-function Home() {
+function Home({user}) {
 
   const slides = [
     { url: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=600'},
@@ -25,7 +23,12 @@ function Home() {
     .then(setUsers); 
   },[])
 
-  return (
+ 
+
+
+if (user){
+
+  return 
     <div className='home'>
 
       <div className="header-wrap">
@@ -53,10 +56,14 @@ function Home() {
         />
 
       ))}
-
      
     </div>
-  )
+}
+else{
+  return
+  <div className='landingpage'></div>
+}
+  
 }
 
 export default Home

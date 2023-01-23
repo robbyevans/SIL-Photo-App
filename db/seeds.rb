@@ -31,7 +31,7 @@ puts "seeding photos..🌱"
   Photo.create(
     album_id:rand(1..10),
     photo_title:Faker::Mountain.range,
-    img_url:Faker::Avatar.image
+    img_url:"https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=600"
   )
 end
   puts "photos complete!✅"

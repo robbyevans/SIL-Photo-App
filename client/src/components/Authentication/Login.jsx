@@ -18,7 +18,7 @@ function Login ({setUser}){
       body: JSON.stringify({username, password}),
     }).then((r)=>{
       if(r.ok){
-        r.json().then((user)=>setUser(user))
+        r.json().then((user)=>setUser(user));
         navigate('/');
       }
       else
@@ -29,7 +29,7 @@ function Login ({setUser}){
   return (
     <div className='auth-page'>
       <div className='auth-title'>
-        <h1>Please Login</h1>
+        <h1> Login</h1>
       </div>
       <div className="signup">
       <form className='form-control' onSubmit={handleSubmit}>
@@ -39,8 +39,7 @@ function Login ({setUser}){
         autoComplete="off"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        // value={username}
-        // onChange={handleChange}
+    
         />
       
 
@@ -52,8 +51,7 @@ function Login ({setUser}){
          onChange={(e) => setPassword(e.target.value)}
          placeholder="Password"
        
-        // value={password}
-        // onChange={handleChange}
+        
         />
         {msg?(<div className="error-msg">
           <h5 className="error-text">Invalid username or password!!.</h5>

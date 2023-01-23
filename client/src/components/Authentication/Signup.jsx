@@ -1,13 +1,16 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router';
 import "./Auth.css"
 
-function Signup(setUser) {
+function Signup({setUser}) {
   const [name, setName] = useState("")
   const [username, setUsername] = useState("");
   const [email ,setEmail]= useState("");
   const [password,setPassword]=useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [msg, setMsg] = useState();
+
+  const navigate =useNavigate()
 
   function handleSubmit(e){
     e.preventDefault();
@@ -27,6 +30,7 @@ function Signup(setUser) {
     }).then((r)=>{
       if (r.ok){
         r.json().then((user)=>setUser(user));
+        navigate('/');
         
       }else
       setMsg("*Password should be identical and username unique")
