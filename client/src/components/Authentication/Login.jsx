@@ -13,7 +13,7 @@ function Login ({setUser}){
     fetch("/login",{
       method: 'POST',
       headers: {
-        "Content-Type":"applicaion/json",
+        "Content-Type":"application/json",
       },
       body: JSON.stringify({username, password}),
     }).then((r)=>{

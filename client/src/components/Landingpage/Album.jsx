@@ -2,9 +2,20 @@ import React,{useState,useEffect} from 'react'
 import "./Home.css"
 import PictureWrap from './PictureWrap'
 
-function Album({key,title}) {
+function Album({album,title}) {
 
-  console.log(title)
+  const[albumData,setAlbumData]=useState(null)
+
+
+
+  useEffect(()=>{
+    fetch(`/albums/${album.album_id}`)
+    .then((r)=>r.json())
+    .then(setAlbumData); 
+  },[])
+
+
+  
 
   const[showPicture, setShowPicture]=useState(null)
   
@@ -23,7 +34,7 @@ function Album({key,title}) {
        <img src='galleryicon.png' alt='' className='album-cover-img'/>
        <p className='title'>{title}</p>
      </div>
-     {showPicture?(<PictureWrap handleClick={handleClick}/>):(null)}
+     {showPicture?(<PictureWrap albumData={albumData} handleClick={handleClick}/>):(null)}
   
    
     </>

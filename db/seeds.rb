@@ -19,7 +19,6 @@ puts"users complete!✅"
 puts "seeding albums...🌱"
 10.times do 
   Album.create(
-    album_id:rand(1..10),
     user_id:rand(1..10),
     album_title:Faker::Mountain.name
   )

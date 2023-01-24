@@ -10,10 +10,9 @@ function AlbumWrap({albums}) {
     setShowAlbum(!showAlbum)
   }
  
-  console.log(albums)
+  
 
-  for (let items of albums){
-  }
+
 
   return (
     <>
@@ -21,14 +20,17 @@ function AlbumWrap({albums}) {
     <div className='album-container'>
       <div className="album-wrap">
       {albums.map((album)=>(
-
-
+        
+        
         <Album 
-        key={album.album_id}
+        key={album.id}
         title={album.album_title}
-        />
 
-      ))}
+        album={album}
+        />
+        
+        ))}
+        
       </div>
     </div>
       ):(null)}

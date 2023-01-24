@@ -7,4 +7,3 @@ class FallbackController < ActionController::Base
     render file: 'public/index.html'
   end
 end
-

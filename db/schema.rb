@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2023_01_23_110255) do
   enable_extension "plpgsql"
 
   create_table "albums", force: :cascade do |t|
-    t.integer "album_id"
     t.integer "user_id"
     t.string "album_title"
     t.datetime "created_at", precision: 6, null: false

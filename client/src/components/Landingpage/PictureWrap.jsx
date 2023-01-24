@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./Home.css"
 import ResponsiveGallery from '../ResponsiveGallery';
 
-function PictureWrap({handleClick}) {
+function PictureWrap({albumData,handleClick}) {
+
+  const[pictures,setPictures]=useState(albumData.photos)
+
+console.log(pictures)
   return (
 
  
@@ -13,7 +17,12 @@ function PictureWrap({handleClick}) {
    <button className='closePicture' onClick={handleClick}>X</button>
 
    <div className='gallery'>
-    <ResponsiveGallery/>
+   {pictures.map((picture)=>(
+     <ResponsiveGallery
+     
+     />
+
+   ))}
     </div>
 
       </div>
