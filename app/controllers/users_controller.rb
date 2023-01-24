@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authorize, only: [:show]
-
-  def index
-    user=User.all
-    render json:user,status: :ok
-  end
-
+  
   def create
       user = User.create(user_params)
       if user.valid?
@@ -17,10 +12,19 @@ class UsersController < ApplicationController
       end
   end
 
-  def show
-      user = User.find_by(id: session[:user_id])
-      render json: user, status: :ok
+  def index
+    user=User.all
+    render json:user,status: :ok
   end
+
+
+  def show
+    render json: @current_user
+  end
+#   def show
+#       user = User.find_by(id: session[:user_id])
+#       render json: user, status: :ok
+#   end
 
   private
 

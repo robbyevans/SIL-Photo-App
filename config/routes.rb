@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :albums,only: [:index,:show]
   resources :photos,only: [:index,:show]
 
+  post"/signup", to: "users#create"
   post"/login", to: "sessions#create"
   delete"/logout", to: "sessions#destroy"
 
-  post"/signup", to: "users#create"
 
   get"/me", to: "users#show"
   

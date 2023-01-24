@@ -21,11 +21,11 @@ function Signup({setUser}) {
 
       },
       body:JSON.stringify({
-        name:name,
-        username:username,
-        email:email,
-        password:password,
-        password_confirmation:passwordConfirmation,
+        name,
+        username,
+        email,
+        password,
+        password_confirmation: passwordConfirmation,
       }),
     }).then((r)=>{
       if (r.ok){

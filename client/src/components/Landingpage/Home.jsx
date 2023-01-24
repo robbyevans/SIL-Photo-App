@@ -23,12 +23,10 @@ function Home({user}) {
     .then(setUsers); 
   },[])
 
- 
+return(
+<>
 
-
-if (user){
-
-  return 
+  {user?(
     <div className='home'>
 
       <div className="header-wrap">
@@ -58,12 +56,11 @@ if (user){
       ))}
      
     </div>
-}
-else{
-  return
-  <div className='landingpage'></div>
-}
-  
-}
+  ):(
+    <div className='landingpage'></div>
+  )}
 
+  </>
+)
+  }
 export default Home
