@@ -17,12 +17,11 @@ console.log(pictures)
    <button className='closePicture' onClick={handleClick}>X</button>
 
    <div className='gallery'>
-   {pictures.map((picture)=>(
-     <ResponsiveGallery
-     
+   {/* {pictures.map((picture)=>(
      />
-
-   ))}
+     
+     ))} */}
+     <ResponsiveGallery/>
     </div>
 
       </div>
