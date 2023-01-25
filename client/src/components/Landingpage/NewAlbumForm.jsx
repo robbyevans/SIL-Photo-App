@@ -2,9 +2,9 @@ import React,{useEffect, useState} from 'react'
 import "./Home.css"
 import { MdOutlineCheckCircle } from "react-icons/md";
 
-const delay = ms => new Promise(
-  resolve => setTimeout(resolve, ms)
-);
+// const delay = ms => new Promise(
+//   resolve => setTimeout(resolve, ms)
+// );
 
 
 function NewAlbumForm({user}) {
@@ -56,35 +56,44 @@ function handleSubmit(e){
       r.json().then((album)=>{
         setNewAlbumId(album.id)
         setMsg("Album created")
-      });
-    
+        console.log("here we go!!")
+        
+      } );
       
     }else
     setMsg(null)
   })
-
-
-  fetch("/photos",{
-    method:"POST",
-    headers:{
-      "Content-Type":"application/json",
-    },
-    body:JSON.stringify({
-      album_id:newAlbumId,
-      photo_title:photoTitle,
-      img_url:imgUrl
-    }),
   
-  })
-  .then((r)=>{
-    if (r.ok){
-      r.json().then((resp)=>{
-        console.log(resp)
-      });
-        
-    }else
-    console.log("failed to create img")
-  })
+  console.log("wait for setNewAlbumId to pick album id");
+  setTimeout(() => {  
+
+
+
+    fetch("/photos",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+      },
+      body:JSON.stringify({
+        album_id:newAlbumId,
+        photo_title:photoTitle,
+        img_url:imgUrl
+      }),
+    
+    })
+    .then((r)=>{
+      if (r.ok){
+        r.json().then((resp)=>{
+          console.log(resp)
+          console.log("must be last few!")
+        });
+          
+      }else
+      console.log("failed to create img")
+    })
+  }, 1000);
+
+
 }
 
   return (

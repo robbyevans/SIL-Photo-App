@@ -12,6 +12,13 @@ class PhotosController < ApplicationController
     photo=Photo.create(photo_params)
     render json: photo, status: :created
   end
+
+  def update
+    photo=Photo.find_by!(id:params[:id])
+    photo.update(photo_params)
+    render json:photo, status: :created
+
+  end
   
   private
 

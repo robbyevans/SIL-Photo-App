@@ -243,3 +243,24 @@
   width: 20px;
 
 }
+.responsive-img h5{
+  /* border: 1px solid grey; */
+  margin-bottom: 5px;
+  z-index: 90px;
+
+
+}
+.faEdit{
+  margin-top: 18px;
+}
+.faEdit.active{
+  color: #ff5800;
+}
+.photo-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pics_id{
+  display: none;
+}

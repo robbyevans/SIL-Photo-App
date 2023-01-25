@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :photos
   resources :users,only: [:index,:show,:create]
   resources :albums,only: [:index,:show,:create]
-  resources :photos,only: [:index,:show,:create]
+  # resources :photos,only: [:index,:show,:create]
 
   post"/signup", to: "users#create"
   post"/login", to: "sessions#create"
