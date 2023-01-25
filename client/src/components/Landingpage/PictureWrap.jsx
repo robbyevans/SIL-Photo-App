@@ -5,9 +5,15 @@ import ResponsiveGallery from '../ResponsiveGallery';
 function PictureWrap({albumData,handleClick}) {
 
   const[pictures,setPictures]=useState(albumData.photos)
+  let imgArray=[]
 
-console.log(pictures)
+
+{pictures.map((pic)=>(
+  imgArray.push(pic.img_url)
+))}
+
   return (
+
 
  
  
@@ -21,7 +27,7 @@ console.log(pictures)
      />
      
      ))} */}
-     <ResponsiveGallery/>
+     <ResponsiveGallery images={imgArray}/>
     </div>
 
       </div>

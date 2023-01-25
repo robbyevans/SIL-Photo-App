@@ -20,17 +20,17 @@ puts "seeding albums...🌱"
 10.times do 
   Album.create(
     user_id:rand(1..10),
-    album_title:Faker::Mountain.name
+    album_title:Faker::Address.country
   )
 end
 puts "album complete!✅"
 
 puts "seeding photos..🌱"
-10.times do 
+20.times do 
   Photo.create(
     album_id:rand(1..10),
     photo_title:Faker::Mountain.range,
-    img_url:"https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=600"
+    img_url:Faker::LoremFlickr.image(size: "1280x1920", search_terms: ['nature', 'cats'])
   )
 end
   puts "photos complete!✅"
