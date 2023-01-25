@@ -6,6 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+  images = [
+   "https://picsum.photos/2000/3000",
+   "https://picsum.photos/3000/2000",
+   "https://picsum.photos/4000/3000",
+   "https://picsum.photos/2000/1500",
+   "https://picsum.photos/1000/2500",
+   "https://picsum.photos/1500/3000",
+   "https://picsum.photos/2500/3000",
+   "https://picsum.photos/3000/2500",
+   "https://picsum.photos/3500/3000",
+   "https://picsum.photos/2000/1500",
+   "https://picsum.photos/1000/2500",
+   "https://picsum.photos/1500/2000",
+ ]
+
 puts "seeding...🌱"
 10.times do
   User.create(
@@ -30,7 +47,7 @@ puts "seeding photos..🌱"
   Photo.create(
     album_id:rand(1..10),
     photo_title:Faker::Mountain.range,
-    img_url:Faker::LoremFlickr.image(size: "1280x1920", search_terms: ['nature', 'cats'])
+    img_url:images[rand(1..10)]
   )
 end
   puts "photos complete!✅"

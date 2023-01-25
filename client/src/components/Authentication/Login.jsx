@@ -57,7 +57,7 @@ function Login ({setUser}){
           <h5 className="error-text">Invalid username or password!!.</h5>
         </div>
         ):(null)}
-        <button className="s-btn" type="submit">Login</button>
+        <button className="btn" type="submit">Login</button>
       </form>
       </div>
       </div>

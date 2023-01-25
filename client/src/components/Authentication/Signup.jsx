@@ -85,7 +85,7 @@ function Signup({setUser}) {
          {msg?(<div className="error-msg">
           <h5 className="error-text">* Password should be identical and username unique!.</h5>
         </div>):(null)}
-          <button type='submit'>Sign up</button>
+          <button className='btn' type='submit'>Sign up</button>
         </form>
       </div>
     </div>

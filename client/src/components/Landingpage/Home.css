@@ -202,3 +202,21 @@
   margin-left: 5px;
   padding: 0px;
 }
+
+.new-album-form{
+  background-color: #ff5800;
+
+}
+.new-album-form input{
+  
+}
+.btn{
+  margin-top: 20px;
+  padding: 10px;
+  background-color:#ff5800;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-right: 5px;
+  color: #fff;
+  border-radius: 5px;
+}

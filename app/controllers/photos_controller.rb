@@ -8,8 +8,16 @@ class PhotosController < ApplicationController
     photo=Photo.find_by!(id:params[:id])
     render json: photo, status: :ok
   end
+  def create
+    photo=Photo.create(photo_params)
+    render json: photo, status: :created
+  end
   
   private
+
+  def photo_params
+    params.permit(:album_id,:photo_title, :img_url)
+  end
   
   def not_found_response
     render json: {error:"Photo not found"},status: :not_found

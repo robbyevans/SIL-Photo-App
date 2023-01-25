@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { MdCameraEnhance } from 'react-icons/md';
+import NewAlbumForm from "./NewAlbumForm";
 
 
 const slideStyles = {
   width: "100%",
   height: "100%",
-  borderRadius: "10px",
+  // borderRadius: "10px",
   backgroundSize: "cover",
   backgroundPosition: "center",
 };
@@ -49,6 +50,9 @@ const dotStyle = {
 };
 
 const ImageSlider = ({ slides }) => {
+
+  
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -67,6 +71,15 @@ const ImageSlider = ({ slides }) => {
     ...slideStyles,
     backgroundImage: `url(${slides[currentIndex].url})`,
   };
+  
+  
+  
+  const[showForm,setShowForm]=useState(false)
+
+  function handleClick(){
+    setShowForm(!showForm)
+  }
+
 
   return (
     <div className="slider mobile-v" style={sliderStyles}>
@@ -83,7 +96,12 @@ const ImageSlider = ({ slides }) => {
           <div className="header-title">
             <p>All your pictures in one place</p>
             <h1>TURN YOUR PHOTOS<br/> INTO ART</h1>
-          <button className="header-btn"> Add Album  <MdCameraEnhance className="MdCameraEnhance"/></button>
+          <button onClick={handleClick} className="btn"> Add Album  <MdCameraEnhance className="MdCameraEnhance"/></button>
+          {showForm?(
+            <NewAlbumForm/>
+          ):(
+            null
+          )}
           </div>
         </div>
       </div>
