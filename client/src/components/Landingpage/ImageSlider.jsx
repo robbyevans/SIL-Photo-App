@@ -49,7 +49,7 @@ const dotStyle = {
   fontSize: "20px",
 };
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({user, slides }) => {
 
   
   
@@ -98,7 +98,7 @@ const ImageSlider = ({ slides }) => {
             <h1>TURN YOUR PHOTOS<br/> INTO ART</h1>
           <button onClick={handleClick} className="btn"> Add Album  <MdCameraEnhance className="MdCameraEnhance"/></button>
           {showForm?(
-            <NewAlbumForm/>
+            <NewAlbumForm user={user}/>
           ):(
             null
           )}

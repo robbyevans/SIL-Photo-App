@@ -1,36 +1,92 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import "./Home.css"
+import { MdOutlineCheckCircle } from "react-icons/md";
 
-  const albumInitialState={
-    user_id:"",
-    album_title:"",
+const delay = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);
 
+
+function NewAlbumForm({user}) {
+
+
+
+
+  
+  
+  // const albumInitialState={
+  //   user_id:(user.id),
+  //   album_title:""
+  // }
+  
+  // const[formData,setFormData] = useState(albumInitialState)
+
+  const[userId,setUserId]=useState(user.id);
+  const[albumTitle,setAlbumTitle]=useState("");
+  const [msg, setMsg] = useState("");
+  const[newAlbumId,setNewAlbumId]=useState("");
+  const[albumId,setAlbumId]=useState("")
+  const[photoTitle,setPhotoTitle]=useState("")
+  const[imgUrl,setImgUrl]=useState("")
+
+
+
+  function hidepopup(){
+    setTimeout(() => {
+    setMsg(null);}, 3000);
   }
 
-function NewAlbumForm() {
-  const[formData,setFormData] = useState(albumInitialState)
 
-function handleChange(e){
-  setFormData({
-    ...formData,
-    [e.target.id]:e.target.value,
-  });
-}
+
 
 function handleSubmit(e){
   e.preventDefault();
   fetch("/albums",{
     method:"POST",
-    header:{
+    headers:{
       "Content-Type":"application/json",
     },
-    body:JSON.stringify(formData),
+    body:JSON.stringify({
+      user_id:userId,
+      album_title:albumTitle
+    }),
   })
-  .then((r)=>r.json())
-  .then((console.log)={
-    setFormData
-  });
+  .then((r)=>{
+    if (r.ok){
+      r.json().then((album)=>{
+        setNewAlbumId(album.id)
+        setMsg("Album created")
+      });
+    
+      
+    }else
+    setMsg(null)
+  })
+
+
+  fetch("/photos",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json",
+    },
+    body:JSON.stringify({
+      album_id:newAlbumId,
+      photo_title:photoTitle,
+      img_url:imgUrl
+    }),
+  
+  })
+  .then((r)=>{
+    if (r.ok){
+      r.json().then((resp)=>{
+        console.log(resp)
+      });
+        
+    }else
+    console.log("failed to create img")
+  })
 }
+
   return (
     <div className="new_album_card ">
       <form className="form-control new-album-form" onSubmit={handleSubmit}>
@@ -39,29 +95,34 @@ function handleSubmit(e){
         <input
         placeholder='Album Title'
           type="text"
-          id="title"
-          value={formData.album_title}
-          onChange={handleChange}
+          value={albumTitle}
+          onChange={(e) => setAlbumTitle(e.target.value)}
         />
-          
-        
-      {/* <label htmlFor="imageTitle">Image Title </label> */}
+      
       <input
       placeholder='imageTitle'
         type="text"
-        id="image_title"
-        value={formData.image_title}
-        onChange={handleChange}
+        value={photoTitle}
+        onChange={(e) => setPhotoTitle(e.target.value)}
       />
-        {/* <label htmlFor="image_url">Image URL: </label> */}
+       
+    
         <input
-        placeholder='image_url'
-          type="text"
-          id="image"
-          value={formData.image_url}
-          onChange={handleChange}
+        placeholder=" image URL:https:example //my-images.com"
+          type="url"
+          value={imgUrl}
+          onChange={(e) => setImgUrl(e.target.value)}
         />
-        <button className='btn' type="submit">Submit</button>
+
+
+        <button onClick={hidepopup} className='btn' type="submit">Submit</button>
+      {msg?(
+        <div className='popup-alert'id='popup' > <MdOutlineCheckCircle className='check'  /> <h8>Album created</h8></div>
+
+        
+      ):(
+        null
+      )}
       </form>
     </div>
   )

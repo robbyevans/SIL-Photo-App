@@ -16,7 +16,6 @@ function Home({user}) {
 
   const [users,setUsers]=useState([])
 
-  console.log(user)
 
 
   useEffect(()=>{
