@@ -279,17 +279,42 @@
   /* opacity: 0.6; */
 }
 .banner h1{
-  font-size: 100px;
-  color: #fff;
-
+  font-size: 70px;
+  color:#fff;
 
 }
 .banner p{
   font-size: 20px;
   color: #fff;
 
-  margin-top: -60px;
+  margin-top: -40px;
 }
 .banner-title{
   margin-left: 50px;
+}
+
+@media screen and (max-width:650px) {
+
+  .navbar{
+    font-size:16px;
+  }
+  
+  .banner-title{
+    /* border: 1px solid red; */
+    margin-right: 25px;
+    margin-top: -200px;
+
+  }
+
+  .banner h1{
+    font-size: 60px;
+    color: #fff;
+    margin-top: -12px;
+  
+  }
+  /* .banner p{
+    margin-top:px;
+  }
+  */
+  
 }

@@ -7,6 +7,12 @@
   .navbar{
     font-size:small;
   }
+
+  .banner h1{
+    font-size: 70px;
+    color: #fff;
+  
+  }
  
   
 }
