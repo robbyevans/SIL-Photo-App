@@ -21,9 +21,11 @@ viewIT is a gallery web application and a photo sharing platform  that enables y
 ### Screenshot
 
 ​
-<img src="./client/public/login.png" width="900px" height="440px">
-<img src="./client/public/signup.png" width="900px" height="440px">
-<img src="./client/public/home-page.png" width="900px" height="440px">
+<img src="./client/public/React App(9).png" width="900px" height="440px">
+<img src="./client/public/React App(12).png" width="900px" height="440px">
+<img src="./client/public/React App(11).png" width="900px" height="440px">
+<img src="./client/public/React App(13).png" width="900px" height="440px">
+
 ​
 ​
 
