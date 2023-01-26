@@ -6,6 +6,7 @@ function Signup({setUser}) {
   const [name, setName] = useState("")
   const [username, setUsername] = useState("");
   const [email ,setEmail]= useState("");
+  const[avatar,setAvatar]= useState("");
   const [password,setPassword]=useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [msg, setMsg] = useState();
@@ -24,6 +25,7 @@ function Signup({setUser}) {
         name,
         username,
         email,
+        avatar,
         password,
         password_confirmation: passwordConfirmation,
       }),
@@ -64,6 +66,12 @@ function Signup({setUser}) {
           placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          />
+           <input
+          type="url"
+          placeholder='Avatar_url'
+          value={avatar}
+          onChange={(e) => setAvatar(e.target.value)}
           />
 
         <input

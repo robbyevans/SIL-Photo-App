@@ -8,9 +8,10 @@ import ImageSlider from './ImageSlider'
 function Home({user}) {
 
   const slides = [
-    // { url: 'https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=600'},
+    // { url:"https://images.pexels.com/photos/2860705/pexels-photo-2860705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    // {url:"https://picsum.photos/1400/300"},
     // {url:"https://images.pexels.com/photos/561463/pexels-photo-561463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    // {url:"https://images.pexels.com/photos/561463/pexels-photo-561463.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+
     {url:"https://images.pexels.com/photos/552779/pexels-photo-552779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
   ];
 
@@ -19,6 +20,7 @@ function Home({user}) {
 
 
   useEffect(()=>{
+ 
     fetch("/users")
     .then((r)=>r.json())
     .then(setUsers); 

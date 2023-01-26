@@ -1,7 +1,7 @@
 import { Action } from '@remix-run/router'
 import React,{useState,useEffect} from 'react'
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-import ImageSlider from './Landingpage/ImageSlider'
+// import ImageSlider from './Landingpage/ImageSlider'
 import {FaEdit } from 'react-icons/fa';
 
 // const images = [
@@ -44,6 +44,8 @@ function ResponsiveGallery({pictures,images}) {
 
   function handleSubmit(e){
     e.preventDefault();
+
+    ////
     fetch(`/photos/${photoId}`,{
       method:"PATCH",
       headers:{
@@ -63,6 +65,10 @@ function ResponsiveGallery({pictures,images}) {
       console.log("unsuccessful")
     })
 
+
+    ////
+
+
   }
 
   return (
@@ -77,6 +83,7 @@ function ResponsiveGallery({pictures,images}) {
                  
                         // setPhotoId(pics.id),
                     <div className="responsive-img">
+                      
                       <div className='photo-title'>
                         <h5>Title:{pics.photo_title} </h5>
                         {edit?(

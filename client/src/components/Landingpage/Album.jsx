@@ -9,9 +9,12 @@ function Album({album,title}) {
 
 
   useEffect(()=>{
+
+
     fetch(`/albums/${album.id}`)
     .then((r)=>r.json())
     .then(setAlbumData); 
+
   },[])
 
 

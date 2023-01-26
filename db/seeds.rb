@@ -24,9 +24,10 @@
  ]
 
 puts "seeding...🌱"
-10.times do
+6.times do
   User.create(
     name:Faker::Name.name,
+    avatar:images[rand(1..10)],
     username:Faker::Name.first_name,
     password_digest:12345
   )
@@ -36,7 +37,7 @@ puts"users complete!✅"
 puts "seeding albums...🌱"
 10.times do 
   Album.create(
-    user_id:rand(1..10),
+    user_id:rand(1..6),
     album_title:Faker::Address.country
   )
 end

@@ -30,10 +30,16 @@ function NewAlbumForm({user}) {
   const[imgUrl,setImgUrl]=useState("")
 
 
+  function refresh(){
+     window.location.reload(true)
+    }
+
 
   function hidepopup(){
     setTimeout(() => {
-    setMsg(null);}, 3000);
+    setMsg(null);
+    // refresh()
+  }, 3000);
   }
 
 
@@ -85,13 +91,14 @@ function handleSubmit(e){
       if (r.ok){
         r.json().then((resp)=>{
           console.log(resp)
-          console.log("must be last few!")
         });
           
       }else
       console.log("failed to create img")
     })
   }, 1000);
+
+
 
 
 }

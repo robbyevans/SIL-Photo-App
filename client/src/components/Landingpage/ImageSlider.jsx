@@ -49,7 +49,7 @@ const dotStyle = {
   fontSize: "20px",
 };
 
-const ImageSlider = ({user, slides }) => {
+const ImageSlider = ({user,slides }) => {
 
   
   

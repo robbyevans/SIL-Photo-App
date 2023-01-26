@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
     </div> */}
     <div className='legal'>
-      <p>moveIT © 2022 All Rights Reserved.</p>
+      <p>viewIT © 2022 All Rights Reserved.</p>
         </div>
   </>
   )

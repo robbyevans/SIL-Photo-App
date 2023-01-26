@@ -264,3 +264,30 @@
 .pics_id{
   display: none;
 }
+.banner{
+  height: 100vh;
+  background-image: url('./../../new-images/anton-darius-jvR9ieZVG64-unsplash.jpg');
+  /* background-image: cover; */
+  background-size:cover;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  background-color:rgba(0, 0, 0, 0.5);
+  margin-top: -10px;
+}
+.banner h1{
+  font-size: 100px;
+  color: #fff;
+
+
+}
+.banner p{
+  font-size: 20px;
+  color: #fff;
+
+  margin-top: -60px;
+}
+.banner-title{
+  margin-left: 50px;
+}

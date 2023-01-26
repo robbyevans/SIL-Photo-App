@@ -4,7 +4,7 @@ import "./Home.css"
 
 
 function UserWrap({userparams}) {
-  const{id,name,username,email,albums} = userparams
+  const{id,name,username,email,avatar,albums} = userparams
   const[isRead,setIsRead]=useState(null)
 
 
@@ -16,7 +16,7 @@ function UserWrap({userparams}) {
   return (
     <>
     <div onClick={openAlbum} className='user-container'>
-        <img className='user-img' src='phone.png' alt=''></img>
+        <img className='user-img' src={avatar} alt=''></img>
         <h4 className='user-name'>{username}</h4>
         <span className='user-album'>{albums.length}</span>
       </div>

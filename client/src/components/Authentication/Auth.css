@@ -4,11 +4,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-image: url('./../../new-images/anton-darius-jvR9ieZVG64-unsplash.jpg');
+  /* background-image: cover; */
+  background-size:cover;
+}
+.auth-title h1{
+  color: #fff;
 }
 
-
 .form-control{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   padding: 10px;
