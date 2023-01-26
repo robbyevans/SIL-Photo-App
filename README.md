@@ -13,18 +13,25 @@ viewIT is a gallery web application and a photo sharing platform  that enables y
 
 
 ## Technology used
-
--viewIT is built using a combination of React and JavaScript for the Front-end development, while Ruby on rails for back-end development and postgreSQL for database
-​
+- Figma- Wireframes
+- ReactJS and Redux Toolkit-Frontend
+- CSS-styling
+- Ruby on Rails- Backend
+- Postgresql- Database
+- Jest & Minitests: Testing frameworks
+- Ruby 2.7.4
+- NodeJS (v16), and npm
+- Heroku CLI
+- Postgresql
 ​
 
 ### Screenshot
 
 ​
-<img src="./client/public/React App(9).png" width="900px" height="440px">
-<img src="./client/public/React App(12).png" width="900px" height="440px">
-<img src="./client/public/React App(11).png" width="900px" height="440px">
-<img src="./client/public/React App(13).png" width="900px" height="440px">
+<img src="./client/public/React App (9).png" width="900px" height="440px">
+<img src="./client/public/React App (12).png" width="900px" height="440px">
+<img src="./client/public/React App (11).png" width="900px" height="440px">
+<img src="./client/public/React App (13).png" width="900px" height="440px">
 
 ​
 ​
