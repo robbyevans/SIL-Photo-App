@@ -181,7 +181,7 @@
   font-style: italic;
 }
 .user-navbar{
-  border: 1px solid greenyellow;
+  /* border: 1px solid greenyellow; */
   margin-top: 20px;
   margin-bottom: 25px;
   display: flex;
@@ -266,15 +266,17 @@
 }
 .banner{
   height: 100vh;
-  background-image: url('./../../new-images/anton-darius-jvR9ieZVG64-unsplash.jpg');
+  /* background-image: url(''); */
   /* background-image: cover; */
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('./../../new-images/anton-darius-jvR9ieZVG64-unsplash.jpg');
   background-size:cover;
   text-align: left;
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color:#000;
   margin-top: -10px;
+  /* opacity: 0.6; */
 }
 .banner h1{
   font-size: 100px;

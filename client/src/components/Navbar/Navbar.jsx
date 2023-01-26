@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {NavLink} from "react-router-dom"
+import {FaUserAlt} from 'react-icons/fa';
 import "./Navbar.css"
 
 
 function Navbar({user, setUser}) {
+
+
+  
   function handleLogoutClick(){
     fetch("/logout",{method: "DELETE"}).then((r)=>{
       if(r.ok){
@@ -17,8 +21,11 @@ function Navbar({user, setUser}) {
       <nav className='nav-wrap'>
         {user ? (
           <>
-          <NavLink className="navlink" to="/">Home</NavLink>
-          <button className='btn' onClick={handleLogoutClick}>Logout</button>
+            <NavLink className="navlink" to="/">Home</NavLink>
+            <button className='btn logout-btn' onClick={handleLogoutClick}>Logout</button>
+            <div className='username'><p><span className='span-text'>welcome: </span><span className='span-username'>{user.username}<FaUserAlt className="user-icon"/></span></p></div>
+          
+          
           </>
         ):(
         <>

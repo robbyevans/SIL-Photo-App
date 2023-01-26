@@ -35,3 +35,23 @@
   font-style: open;
   margin-left: 20px;
 }
+.username{
+  margin-bottom: -35px;
+  /* border: 1px solid red; */
+  /* padding: -10px; */
+  /* height: 25px; */
+  font-size: 15px;
+  
+}
+.span-text{
+  margin-left: -30px;
+}
+.span-username{
+ 
+  color: #ff5800;
+  margin-left: 10px;
+}
+.user-icon{
+  margin-left: 5px;
+}
+

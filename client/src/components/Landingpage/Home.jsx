@@ -33,7 +33,11 @@ return(
     <div className='home'>
 
       <div className="header-wrap">
+       
         <div className='header'>
+          {/* <div>
+            <p>hello</p>
+          </div> */}
         <ImageSlider user={user} slides={slides}/>
         </div>
       </div>
