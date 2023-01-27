@@ -24,7 +24,7 @@
  ]
 
 puts "seeding...🌱"
-6.times do
+5.times do
   User.create(
     name:Faker::Name.name,
     avatar:images[rand(1..10)],
@@ -37,7 +37,7 @@ puts"users complete!✅"
 puts "seeding albums...🌱"
 10.times do 
   Album.create(
-    user_id:rand(1..6),
+    user_id:rand(1..5),
     album_title:Faker::Address.country
   )
 end
@@ -53,3 +53,42 @@ puts "seeding photos..🌱"
 end
   puts "photos complete!✅"
   puts "seeding complete!✅✅✅✅"
+
+  # puts "seeding extra.."
+
+  # Album.create(
+  #   user_id:1,
+  #   album_title:"Madagascar"
+  # )
+  # Album.create(
+  #   user_id:1,
+  #   album_title:"Sycheles"
+  # )
+
+  # Photo.create(
+  #   album_id:1,
+  #   photo_title:Faker::Mountain.range,
+  #   img_url:images[rand(1..10)]
+  # )
+  # Photo.create(
+  #   album_id:1,
+  #   photo_title:Faker::Mountain.range,
+  #   img_url:images[rand(1..10)]
+  # )
+  # Photo.create(
+  #   album_id:1,
+  #   photo_title:Faker::Mountain.range,
+  #   img_url:images[rand(1..10)]
+  # )
+  # Photo.create(
+  #   album_id:1,
+  #   photo_title:Faker::Mountain.range,
+  #   img_url:images[rand(1..10)]
+  # )
+  # Photo.create(
+  #   album_id:1,
+  #   photo_title:Faker::Mountain.range,
+  #   img_url:images[rand(1..10)]
+  # )
+
+  # puts "end of extras..."

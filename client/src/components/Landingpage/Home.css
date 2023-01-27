@@ -209,6 +209,7 @@
 .new-album-form{
   background-color: #ff5800;
   z-index: 99;
+  border-radius: 10px;
 
 }
 

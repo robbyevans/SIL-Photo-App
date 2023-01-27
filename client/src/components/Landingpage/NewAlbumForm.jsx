@@ -25,7 +25,7 @@ function NewAlbumForm({user}) {
   const[albumTitle,setAlbumTitle]=useState("");
   const [msg, setMsg] = useState("");
   const[newAlbumId,setNewAlbumId]=useState("");
-  const[albumId,setAlbumId]=useState("")
+  // const[albumId,setAlbumId]=useState("")
   const[photoTitle,setPhotoTitle]=useState("")
   const[imgUrl,setImgUrl]=useState("")
 
@@ -42,7 +42,32 @@ function NewAlbumForm({user}) {
   }, 3000);
   }
 
+// function postphoto(){
 
+//   fetch("/photos",{
+//     method:"POST",
+//     headers:{
+//       "Content-Type":"application/json",
+//     },
+//     body:JSON.stringify({
+//       album_id:newAlbumId,
+//       photo_title:photoTitle,
+//       img_url:imgUrl
+//     }),
+  
+//   })
+//   .then((r)=>{
+//     if (r.ok){
+//       r.json().then((resp)=>{
+//         console.log(resp)
+//         console.log("photo created")
+//       });
+        
+//     }else
+//     console.log("failed to create img")
+//   })
+
+// }
 
 
 function handleSubmit(e){
@@ -60,9 +85,40 @@ function handleSubmit(e){
   .then((r)=>{
     if (r.ok){
       r.json().then((album)=>{
+        console.log(album.id)
         setNewAlbumId(album.id)
+        console.log(newAlbumId)
         setMsg("Album created")
         console.log("here we go!!")
+
+
+        /////
+        fetch("/photos",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json",
+          },
+          body:JSON.stringify({
+            album_id:album.id,
+            photo_title:photoTitle,
+            img_url:imgUrl
+          }),
+        
+        })
+        .then((r)=>{
+          if (r.ok){
+            r.json().then((resp)=>{
+              console.log(resp)
+              console.log("photo created")
+            });
+              
+          }else
+          console.log("failed to create img")
+        })
+        /////
+
+
+
         
       } );
       
@@ -70,33 +126,16 @@ function handleSubmit(e){
     setMsg(null)
   })
   
-  console.log("wait for setNewAlbumId to pick album id");
-  setTimeout(() => {  
+
+  // console.log(newAlbumId)
+  // console.log(photoTitle)
+  // console.log(imgUrl)
 
 
-
-    fetch("/photos",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-      },
-      body:JSON.stringify({
-        album_id:newAlbumId,
-        photo_title:photoTitle,
-        img_url:imgUrl
-      }),
-    
-    })
-    .then((r)=>{
-      if (r.ok){
-        r.json().then((resp)=>{
-          console.log(resp)
-        });
-          
-      }else
-      console.log("failed to create img")
-    })
-  }, 1000);
+  // console.log("wait for setNewAlbumId to pick album id");
+  // setTimeout(() => {  
+  //   postphoto()
+  // }, 3000);
 
 
 
@@ -133,7 +172,7 @@ function handleSubmit(e){
 
         <button onClick={hidepopup} className='btn' type="submit">Submit</button>
       {msg?(
-        <div className='popup-alert'id='popup' > <MdOutlineCheckCircle className='check'  /> <h8>Album created</h8></div>
+        <div className='popup-alert'id='popup'><MdOutlineCheckCircle className='check'/><h8>Album created</h8></div>
 
         
       ):(
