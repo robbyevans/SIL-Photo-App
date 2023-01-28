@@ -21,13 +21,25 @@
    "https://picsum.photos/id/53/2000/1500",
    "https://picsum.photos/id/74/1000/2500",
    "https://picsum.photos/id/78/1500/2000",
+   "https://picsum.photos/id/77/2000/3000",
+   "https://picsum.photos/id/54/3000/2000",
+   "https://picsum.photos/id/88/4000/3000",
+   "https://picsum.photos/id/130/2000/1500",
+   "https://picsum.photos/id/315/1000/2500",
+   "https://picsum.photos/id/57/1500/3000",
+   "https://picsum.photos/id/65/2500/3000",
+   "https://picsum.photos/id/66/3000/2500",
+   "https://picsum.photos/id/99/3500/3000",
+   "https://picsum.photos/id/97/2000/1500",
+   "https://picsum.photos/id/93/1000/2500",
+   "https://picsum.photos/id/22/1500/2000",
  ]
 
 puts "seeding...🌱"
 5.times do
   User.create(
     name:Faker::Name.name,
-    avatar:images[rand(1..10)],
+    avatar:images[rand(1..20)],
     username:Faker::Name.first_name,
     password_digest:12345
   )
@@ -44,11 +56,11 @@ end
 puts "album complete!✅"
 
 puts "seeding photos..🌱"
-20.times do 
+30.times do 
   Photo.create(
     album_id:rand(1..10),
     photo_title:Faker::Mountain.range,
-    img_url:images[rand(1..10)]
+    img_url:images[rand(1..24)]
   )
 end
   puts "photos complete!✅"

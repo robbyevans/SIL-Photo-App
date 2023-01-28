@@ -53,7 +53,7 @@ function ImageWrap({pics}) {
       <h5>Title:{pics.photo_title} </h5>
       {edit?(
         <div>
-          <form onSubmit={handleSubmit}>
+          <form className="edit-form" onSubmit={handleSubmit}>
             <input
             type="text"
             placeholder='Title'

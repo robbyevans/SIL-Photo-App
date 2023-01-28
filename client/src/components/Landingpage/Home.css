@@ -253,6 +253,7 @@
 }
 .faEdit{
   margin-top: 18px;
+  margin-right: 20px;
 }
 .faEdit.active{
   color: #ff5800;
@@ -292,6 +293,11 @@
 }
 .banner-title{
   margin-left: 50px;
+}
+.edit-form button{
+  background-color: #ff5800;
+  color: #f1f3f4;
+  border: 1px solid #000;
 }
 
 @media screen and (max-width:450px) {
