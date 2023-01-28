@@ -304,6 +304,7 @@
 
   .navbar{
     font-size:15px;
+    margin-top: 10px;
   }
   
   .banner-title{
@@ -319,9 +320,13 @@
     margin-top: -12px;
   
   }
+  .slider{
+    margin-right: 20px;
+  }
   /* .banner p{
     margin-top:px;
   }
   */
   
 }
+
