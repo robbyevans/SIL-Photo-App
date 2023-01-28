@@ -9,18 +9,18 @@
 
 
   images = [
-   "https://picsum.photos/2000/3000",
-   "https://picsum.photos/3000/2000",
-   "https://picsum.photos/4000/3000",
-   "https://picsum.photos/2000/1500",
-   "https://picsum.photos/1000/2500",
-   "https://picsum.photos/1500/3000",
-   "https://picsum.photos/2500/3000",
-   "https://picsum.photos/3000/2500",
-   "https://picsum.photos/3500/3000",
-   "https://picsum.photos/2000/1500",
-   "https://picsum.photos/1000/2500",
-   "https://picsum.photos/1500/2000",
+   "https://picsum.photos/id/27/2000/3000",
+   "https://picsum.photos/id/28/3000/2000",
+   "https://picsum.photos/id/29/4000/3000",
+   "https://picsum.photos/id/30/2000/1500",
+   "https://picsum.photos/id/35/1000/2500",
+   "https://picsum.photos/id/45/1500/3000",
+   "https://picsum.photos/id/55/2500/3000",
+   "https://picsum.photos/id/47/3000/2500",
+   "https://picsum.photos/id/50/3500/3000",
+   "https://picsum.photos/id/53/2000/1500",
+   "https://picsum.photos/id/74/1000/2500",
+   "https://picsum.photos/id/78/1500/2000",
  ]
 
 puts "seeding...🌱"
